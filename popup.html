@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Manager</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 10px;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 5px;
+    }
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #initialSetup, #jobDescription {
+      margin-bottom: 20px;
+    }
+    #jobDescription {
+      display: none;
+    }
+    #savedApplications {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    .saved-application {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+    .saved-application button {
+      width: auto;
+      padding: 4px 8px;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="initialSetup">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+    </div>
+    <div class="form-group">
+      <label for="resume">Upload Resume (TEX format):</label>
+      <input type="file" id="resume" accept=".tex" required>
+    </div>
+    <button id="saveSetup">Save Setup</button>
+  </div>
+
+  <div id="jobDescription">
+    <div class="form-group">
+      <label for="company">Company Name:</label>
+      <input type="text" id="company" required>
+    </div>
+    <div class="form-group">
+      <label for="jobRole">Job Role:</label>
+      <input type="text" id="jobRole" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Job Description:</label>
+      <textarea id="description" required></textarea>
+    </div>
+    <button id="processJob">Process Job Application</button>
+  </div>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
